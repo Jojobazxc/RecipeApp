@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#525DC0"
             android:layout_marginEnd="4dp"
+            app:cornerRadius="8dp"
             android:text="@string/Categories"
             android:layout_weight="1">
         </Button>
@@ -33,10 +34,9 @@
             android:layout_gravity="end"
             android:text="@string/Forever"
             android:backgroundTint="#E13E3E"
+            app:cornerRadius="8dp"
             app:icon="@drawable/ic_heart_empty"
-            app:iconGravity="end"
-            >
-
+            app:iconGravity="end">
         </Button>
     </LinearLayout>
 
