@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4FAFF"
+    android:background="@color/main_background_color"
     tools:context=".MainActivity"
     >
 
@@ -13,31 +13,31 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="55dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
             style="@style/StyleNavButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#525DC0"
+            android:backgroundTint="@color/categories_button_color"
             android:layout_marginEnd="4dp"
             app:cornerRadius="8dp"
-            android:text="@string/Categories"
-            android:layout_weight="1">
-        </Button>
+            android:text="@string/title_categories"
+            android:layout_weight="1"/>
+
 
         <Button
             style="@style/StyleNavButton"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="@string/Forever"
-            android:backgroundTint="#E13E3E"
+            android:text="@string/title_forever"
+            android:backgroundTint="@color/forever_button_color"
             app:cornerRadius="8dp"
             app:icon="@drawable/ic_heart_empty"
-            app:iconGravity="end">
-        </Button>
+            app:iconGravity="textEnd"
+            android:layout_weight="1"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
