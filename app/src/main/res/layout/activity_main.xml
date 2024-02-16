@@ -31,7 +31,8 @@
             android:layout_gravity="end"
             android:text="@string/title_forever"
             android:backgroundTint="@color/forever_button_color"
-            android:drawableEnd="@drawable/ic_heart_empty"
+            app:icon="@drawable/ic_heart_empty"
+            app:iconGravity="end"
             android:layout_weight="1"/>
 
     </LinearLayout>
