@@ -20,10 +20,10 @@
             style="@style/StyleNavButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/dimen_between_buttons"
-            android:layout_weight="1"
             android:backgroundTint="@color/categories_button_color"
-            android:text="@string/title_categories" />
+            android:layout_marginEnd="@dimen/dimen_between_buttons"
+            android:text="@string/title_categories"
+            android:layout_weight="1"/>
 
 
         <Button
@@ -31,10 +31,11 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:layout_weight="1"
+            android:text="@string/title_forever"
             android:backgroundTint="@color/forever_button_color"
-            android:drawableEnd="@drawable/ic_heart_empty"
-            android:text="@string/title_forever" />
+            app:icon="@drawable/ic_heart_empty"
+            app:iconGravity="end"
+            android:layout_weight="1"/>
 
     </LinearLayout>
 
