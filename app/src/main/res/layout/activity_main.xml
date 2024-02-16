@@ -21,7 +21,8 @@
             android:backgroundTint="@color/categories_button_color"
             android:layout_marginEnd="@dimen/dimen_between_buttons"
             android:text="@string/title_categories"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            />
 
 
         <Button
