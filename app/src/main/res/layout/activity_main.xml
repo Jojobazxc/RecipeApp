@@ -9,20 +9,21 @@
     >
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/main_dimen"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="16dp">
 
         <Button
             style="@style/StyleNavButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/categories_button_color"
             android:layout_marginEnd="@dimen/dimen_between_buttons"
-            android:text="@string/title_categories"
             android:layout_weight="1"
-            />
+            android:backgroundTint="@color/categories_button_color"
+            android:text="@string/title_categories" />
 
 
         <Button
@@ -30,11 +31,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="@string/title_forever"
+            android:layout_weight="1"
             android:backgroundTint="@color/forever_button_color"
             android:drawableEnd="@drawable/ic_heart_empty"
-            android:layout_weight="1"/>
+            android:text="@string/title_forever" />
 
     </LinearLayout>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/half_main_dimen"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.fragment.app.FragmentContainerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
