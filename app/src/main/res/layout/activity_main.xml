@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end"
             android:text="@string/title_favorite"
-            android:backgroundTint="@color/forever_button_color"
+            android:backgroundTint="@color/favorite_button_color"
             app:icon="@drawable/ic_heart_empty"
             app:iconGravity="end"
             android:layout_weight="1"/>

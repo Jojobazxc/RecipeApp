@@ -4,5 +4,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_background_color">#F4FAFF</color>
     <color name="categories_button_color">#525DC0</color>
-    <color name="forever_button_color">#E13E3E</color>
+    <color name="favorite_button_color">#E13E3E</color>
 </resources>
