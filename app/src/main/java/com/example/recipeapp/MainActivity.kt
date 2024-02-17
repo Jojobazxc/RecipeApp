@@ -14,10 +14,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        supportFragmentManager.commit {
-            replace<CategoriesListFragment>(R.id.mainContainer)
-            setReorderingAllowed(true)
-            addToBackStack(null)
+
+        binding.categoriesButton.setOnClickListener {
+            supportFragmentManager.commit {
+                replace<CategoriesListFragment>(R.id.mainContainer)
+                setReorderingAllowed(true)
+                addToBackStack(null)
+            }
+        }
+
+        binding.favoriteButton.setOnClickListener {
+            supportFragmentManager.commit {
+                replace<FavoritesFragment>(R.id.mainContainer)
+                setReorderingAllowed(true)
+                addToBackStack(null)
+            }
         }
 
     }
