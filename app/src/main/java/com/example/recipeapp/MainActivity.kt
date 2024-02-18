@@ -15,6 +15,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        supportFragmentManager.commit {
+            replace<CategoriesListFragment>(R.id.mainContainer)
+            setReorderingAllowed(true)
+            addToBackStack(null)
+        }
+
         binding.categoriesButton.setOnClickListener {
             supportFragmentManager.commit {
                 replace<CategoriesListFragment>(R.id.mainContainer)
