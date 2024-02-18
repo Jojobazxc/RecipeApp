@@ -20,9 +20,12 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/categories_button_color"
-            android:layout_marginEnd="@dimen/dimen_between_buttons"
             android:text="@string/title_categories"
             android:layout_weight="1"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent"/>
 
         <Button
             style="@style/StyleNavButton"
@@ -33,8 +36,9 @@
             android:text="@string/title_favorite"
             android:backgroundTint="@color/favorite_button_color"
             app:icon="@drawable/ic_heart_empty"
-            app:iconGravity="end"
-            android:layout_weight="1"/>
+            app:iconGravity="textEnd"
+            android:layout_weight="1">
+        </Button>
 
     </LinearLayout>
 
