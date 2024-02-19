@@ -10,4 +10,12 @@
         <item name="android:textAppearance">@style/StyleTitle14</item>
         <item name="cornerRadius">8dp</item>
     </style>
+    <style name="StyleHeaderTitle" parent="StyleTitle14">
+        <item name="android:textSize">@dimen/header_title_text_size</item>
+        <item name="android:textColor">@color/header_textview_color</item>
+        <item name="android:padding">@dimen/header_textview_padding</item>
+        <item name="android:background">@drawable/shape_rounded_textview</item>
+        <item name="android:layout_marginBottom">@dimen/main_dimen</item>
+        <item name="android:layout_marginStart">@dimen/main_dimen</item>
+    </style>
 </resources>

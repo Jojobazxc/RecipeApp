@@ -5,4 +5,5 @@
     <color name="main_background_color">#F4FAFF</color>
     <color name="categories_button_color">#525DC0</color>
     <color name="favorite_button_color">#E13E3E</color>
+    <color name="header_textview_color">#5F3678</color>
 </resources>
