@@ -2,6 +2,5 @@
 <resources>
     <dimen name="main_dimen">16dp</dimen>
     <dimen name="half_main_dimen">8dp</dimen>
-    <dimen name="dimen_between_buttons">4dp</dimen>
     <dimen name="main_text_size">14sp</dimen>
 </resources>
