@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.databinding.FragmentListCategoriesBinding
 
 class CategoriesListFragment : Fragment() {
@@ -19,6 +20,21 @@ class CategoriesListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         return binding.root
+    }
+
+    private fun initRecycler(){
+
+        val dataSet = STUB.getCategories()
+        val categoriesListAdapter = CategoriesListAdapter(dataSet)
+
+        val recyclerView: RecyclerView = binding.rvCategories
+        recyclerView.adapter = categoriesListAdapter
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecycler()
     }
 
 }

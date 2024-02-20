@@ -9,11 +9,10 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/cardImage"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/bcg_categories" />
+        android:scaleType="fitXY"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,7 +22,7 @@
         android:padding="@dimen/half_main_dimen">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/cardTitle"
             style="@style/StyleTitleOfCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +31,7 @@
             android:text="Заголовок" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/cardDescription"
             style="@style/StyleDescriptionOfCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
