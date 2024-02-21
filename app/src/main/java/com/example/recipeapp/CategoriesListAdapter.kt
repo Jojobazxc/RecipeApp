@@ -16,12 +16,23 @@ import java.io.InputStream
 class CategoriesListAdapter(private val dataSet: List<Category>) :
     RecyclerView.Adapter<CategoriesListAdapter.ViewHolder>() {
 
+    private val itemClickListener: OnItemClickListener? = null
+
+    interface OnItemClickListener {
+        fun onItemClick()
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        val itemClickListener = listener
+    }
+
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         private val binding: ItemCategoryBinding by lazy {
             ItemCategoryBinding.bind(itemView)
         }
 
+        var itemCard = binding.itemCard
         var cardImage: ImageView = binding.cardImage
         var cardTitle: TextView = binding.cardTitle
         var cardDescription: TextView = binding.cardDescription
@@ -37,6 +48,7 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = dataSet[position]
+        viewHolder.itemCard.setOnClickListener { itemClickListener?.onItemClick() }
         viewHolder.cardTitle.text = item.title
         viewHolder.cardDescription.text = item.description
         try {
