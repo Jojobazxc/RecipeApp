@@ -6,7 +6,6 @@
 
     <dimen name="header_textview_padding">10dp</dimen>
     <dimen name="card_view_image_height">130dp</dimen>
-    <dimen name="corner_radius">8dp</dimen>
     <dimen name="header_image_height">224dp</dimen>
     <dimen name="main_dimen">16dp</dimen>
     <dimen name="half_main_dimen">8dp</dimen>
