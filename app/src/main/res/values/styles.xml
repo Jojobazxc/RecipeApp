@@ -10,4 +10,28 @@
         <item name="android:textAppearance">@style/StyleTitle14</item>
         <item name="cornerRadius">8dp</item>
     </style>
+    <style name="StyleHeaderTitle" parent="StyleTitle14">
+        <item name="android:textSize">@dimen/header_title_text_size</item>
+        <item name="android:textColor">@color/header_textview_color</item>
+        <item name="android:padding">@dimen/header_textview_padding</item>
+        <item name="android:background">@drawable/shape_rounded_textview</item>
+        <item name="android:layout_marginBottom">@dimen/main_dimen</item>
+        <item name="android:layout_marginStart">@dimen/main_dimen</item>
+    </style>
+    <style name="StyleCardOfCategories">
+        <item name="cardCornerRadius">8dp</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="StyleTitleOfCard">
+        <item name="android:textSize">@dimen/main_text_size</item>
+        <item name="android:textColor">@color/header_textview_color</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="StyleDescriptionOfCard">
+        <item name="android:textSize">@dimen/description_text_size</item>
+        <item name="android:fontFamily">@font/montserrat_alternates_medium</item>
+        <item name="android:textColor">@color/card_description_color</item>
+    </style>
 </resources>

@@ -15,30 +15,29 @@
         app:layout_constraintBottom_toBottomOf="parent">
 
         <Button
-            style="@style/StyleNavButton"
             android:id="@+id/categoriesButton"
+            style="@style/StyleNavButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:backgroundTint="@color/categories_button_color"
-            android:text="@string/title_categories"
-            android:layout_weight="1"/>
+            android:text="@string/title_categories" />
 
         <View
             android:layout_width="4dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
         <Button
-            style="@style/StyleNavButton"
             android:id="@+id/favoriteButton"
+            style="@style/StyleNavButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
-            android:text="@string/title_favorite"
+            android:layout_weight="1"
             android:backgroundTint="@color/favorite_button_color"
+            android:text="@string/title_favorite"
             app:icon="@drawable/ic_heart_empty"
-            app:iconGravity="textEnd"
-            android:layout_weight="1">
-        </Button>
+            app:iconGravity="textEnd" />
 
     </LinearLayout>
 
