@@ -22,9 +22,9 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
             ItemCategoryBinding.bind(itemView)
         }
 
-        var cardImage: ImageView = binding.cardImage
-        var cardTitle: TextView = binding.cardTitle
-        var cardDescription: TextView = binding.cardDescription
+        var cardImage: ImageView = binding.IvCardImage
+        var cardTitle: TextView = binding.TvCardTitle
+        var cardDescription: TextView = binding.TvCardDescription
 
     }
 
@@ -39,12 +39,13 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
         val item = dataSet[position]
         viewHolder.cardTitle.text = item.title
         viewHolder.cardDescription.text = item.description
+        viewHolder.cardImage.contentDescription = "Изображение категории ${item.title}"
         try {
             val inputStream: InputStream? = viewHolder.itemView.context?.assets?.open(dataSet[position].imageUrl)
             val drawable: Drawable? = Drawable.createFromStream(inputStream, null)
             viewHolder.cardImage.setImageDrawable(drawable)
         }catch (e: IOException){
-            Log.e("RecipeApp", "Error loading image", e)
+            Log.e("RecipeApp", "${e.printStackTrace()}", e)
         }
 
     }
