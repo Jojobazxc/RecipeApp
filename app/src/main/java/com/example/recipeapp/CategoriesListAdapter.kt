@@ -18,13 +18,11 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val binding: ItemCategoryBinding by lazy {
-            ItemCategoryBinding.bind(itemView)
-        }
+        private val binding: ItemCategoryBinding = ItemCategoryBinding.bind(itemView)
 
-        var cardImage: ImageView = binding.IvCardImage
-        var cardTitle: TextView = binding.TvCardTitle
-        var cardDescription: TextView = binding.TvCardDescription
+        var cardImage: ImageView = binding.ivCardImage
+        var cardTitle: TextView = binding.tvCardTitle
+        var cardDescription: TextView = binding.tvCardDescription
 
     }
 
@@ -39,12 +37,14 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
         val item = dataSet[position]
         viewHolder.cardTitle.text = item.title
         viewHolder.cardDescription.text = item.description
-        viewHolder.cardImage.contentDescription = "Изображение категории ${item.title}"
+        viewHolder.cardImage.contentDescription =
+            viewHolder.itemView.context.getString(R.string.content_description_for_card_image) + item.title
         try {
-            val inputStream: InputStream? = viewHolder.itemView.context?.assets?.open(dataSet[position].imageUrl)
+            val inputStream: InputStream? =
+                viewHolder.itemView.context?.assets?.open(dataSet[position].imageUrl)
             val drawable: Drawable? = Drawable.createFromStream(inputStream, null)
             viewHolder.cardImage.setImageDrawable(drawable)
-        }catch (e: IOException){
+        } catch (e: IOException) {
             Log.e("RecipeApp", "${e.printStackTrace()}", e)
         }
 

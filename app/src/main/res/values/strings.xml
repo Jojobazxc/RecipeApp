@@ -3,4 +3,5 @@
     <string name="title_categories">Категории</string>
     <string name="title_favorite">Избранное</string>
     <string name="content_description_header_background">изображение для экрана со списком категорий рецептов</string>
+    <string name="content_description_for_card_image">Изображение категории</string>
 </resources>

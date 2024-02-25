@@ -32,10 +32,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvCategories"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:clipToPadding="false"
-        android:clipChildren="false"
+        android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/half_main_dimen"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
