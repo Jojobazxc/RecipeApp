@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.databinding.ItemCategoryBinding
 import java.io.IOException
@@ -19,7 +20,7 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
     private var itemClickListener: OnItemClickListener? = null
 
     interface OnItemClickListener {
-        fun onItemClick()
+        fun onItemClick(categoryId: Int)
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
@@ -32,7 +33,7 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
             ItemCategoryBinding.bind(itemView)
         }
 
-        var itemCard = binding.itemCard
+        var itemCard: CardView = binding.itemCard
         var cardImage: ImageView = binding.cardImage
         var cardTitle: TextView = binding.cardTitle
         var cardDescription: TextView = binding.cardDescription
@@ -48,7 +49,8 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
         val item = dataSet[position]
-        viewHolder.itemCard.setOnClickListener { itemClickListener?.onItemClick() }
+        val categoryId = item.id
+        viewHolder.itemCard.setOnClickListener { itemClickListener?.onItemClick(categoryId) }
         viewHolder.cardTitle.text = item.title
         viewHolder.cardDescription.text = item.description
         try {
