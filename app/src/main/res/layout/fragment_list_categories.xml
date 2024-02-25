@@ -37,7 +37,6 @@
         android:clipToPadding="false"
         android:clipChildren="false"
         android:layout_marginHorizontal="@dimen/half_main_dimen"
-        android:layout_marginVertical="@dimen/main_dimen"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:itemCount="6"
