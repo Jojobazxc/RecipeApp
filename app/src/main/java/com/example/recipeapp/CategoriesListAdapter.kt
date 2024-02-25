@@ -31,9 +31,9 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
         private val binding: ItemCategoryBinding = ItemCategoryBinding.bind(itemView)
 
         var itemCard = binding.itemCard
-        var cardImage: ImageView = binding.cardImage
-        var cardTitle: TextView = binding.cardTitle
-        var cardDescription: TextView = binding.cardDescription
+        var cardImage: ImageView = binding.ivCardImage
+        var cardTitle: TextView = binding.tvCardTitle
+        var cardDescription: TextView = binding.tvCardDescription
 
     }
 
@@ -50,7 +50,7 @@ class CategoriesListAdapter(private val dataSet: List<Category>) :
         viewHolder.cardTitle.text = item.title
         viewHolder.cardDescription.text = item.description
         viewHolder.cardImage.contentDescription =
-            viewHolder.itemView.context.getString(R.string.content_description_for_card_image) + item.title
+            viewHolder.itemView.context.getString(R.string.content_description_for_card_image) + " " + item.title
         try {
             val inputStream: InputStream? =
                 viewHolder.itemView.context?.assets?.open(dataSet[position].imageUrl)
