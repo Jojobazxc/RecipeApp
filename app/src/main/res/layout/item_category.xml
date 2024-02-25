@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/half_main_dimen"
-    android:layout_marginVertical="@dimen/half_main_dimen"
+    android:layout_marginTop="@dimen/main_dimen"
     android:orientation="vertical">
 
     <LinearLayout
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/ivCardImage"
             android:layout_width="match_parent"
             android:layout_height="@dimen/card_view_image_height"
             android:scaleType="centerCrop"
@@ -30,21 +30,20 @@
             android:padding="@dimen/half_main_dimen">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tvCardTitle"
                 style="@style/StyleTitleOfCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|top"
                 android:layout_marginBottom="@dimen/half_main_dimen"
-                android:text="Заголовок" />
+                tools:text="Заголовок" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/tvCardDescription"
                 style="@style/StyleDescriptionOfCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Описание" />
-
+                tools:text="Описание" />
         </LinearLayout>
 
     </LinearLayout>
