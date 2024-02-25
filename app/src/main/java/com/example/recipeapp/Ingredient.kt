@@ -1,7 +1,7 @@
 package com.example.recipeapp
 
-data class Ingredients(
-    val quantity: Float,
+data class Ingredient(
+    val quantity: String,
     val unitOfMeasure: String,
     val description: String
 )
