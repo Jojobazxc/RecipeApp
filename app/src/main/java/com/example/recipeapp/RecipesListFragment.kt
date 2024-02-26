@@ -26,9 +26,9 @@ class RecipesListFragment : Fragment(R.layout.fragment_list_recipes) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoryId = requireArguments().getInt("category_id")
-        categoryName = requireArguments().getString("category_name")
-        categoryImageUrl = requireArguments().getString("category_image_url")
+        categoryId = requireArguments().getInt(ARG_CATEGORY_ID)
+        categoryName = requireArguments().getString(ARG_CATEGORY_NAME)
+        categoryImageUrl = requireArguments().getString(ARG_CATEGORY_IMAGE_URL)
     }
 
 }
