@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.recipeapp.databinding.FragmentFavoritesBinding
 
 
-class FavoritesFragment: Fragment() {
+class FavoritesFragment : Fragment() {
 
     private val binding: FragmentFavoritesBinding by lazy {
         FragmentFavoritesBinding.inflate(layoutInflater)
