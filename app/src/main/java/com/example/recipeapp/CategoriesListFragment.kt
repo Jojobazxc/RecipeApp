@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.*
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.databinding.FragmentListCategoriesBinding
@@ -46,13 +47,19 @@ class CategoriesListFragment : Fragment() {
     }
 
     fun openRecipesByCategoryId(categoryId: Int) {
-        val categoryName = STUB.getCategories()[categoryId].title
-        val categoryImageUrl = STUB.getCategories()[categoryId].imageUrl
 
-        val bundle = Bundle()
-        bundle.putInt(ARG_CATEGORY_ID, categoryId)
-        bundle.putString(ARG_CATEGORY_NAME, categoryName)
-        bundle.putString(ARG_CATEGORY_IMAGE_URL, categoryImageUrl)
+        val categories: List<Category> = STUB.getCategories()
+
+        val category = categories.find { it.id == categoryId }
+
+        val categoryName = category?.title
+        val categoryImageUrl = category?.imageUrl
+
+        val bundle = bundleOf(
+            ARG_CATEGORY_ID to categoryId,
+            ARG_CATEGORY_NAME to categoryName,
+            ARG_CATEGORY_IMAGE_URL to categoryImageUrl,
+        )
 
         parentFragmentManager.commit {
             replace<RecipesListFragment>(R.id.mainContainer, args = bundle)
