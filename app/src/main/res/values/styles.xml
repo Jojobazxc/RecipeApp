@@ -6,6 +6,13 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/main_text_size</item>
     </style>
+    <style name="StyleIngredient" parent="StyleTitle14">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textColor">@color/card_description_color</item>
+    </style>
+    <style name="StyleMethod" parent="StyleIngredient">
+        <item name="android:textAllCaps">false</item>
+    </style>
     <style name="StyleNavButton" parent="Widget.Material3.Button">
         <item name="android:textAppearance">@style/StyleTitle14</item>
         <item name="cornerRadius">8dp</item>
@@ -33,5 +40,11 @@
         <item name="android:textSize">@dimen/description_text_size</item>
         <item name="android:fontFamily">@font/montserrat_alternates_medium</item>
         <item name="android:textColor">@color/card_description_color</item>
+    </style>
+    <style name="StyleRecipeTitle" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/montserrat_alternates_semi_bold</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/header_title_text_size</item>
+        <item name="android:textColor">@color/header_textview_color</item>
     </style>
 </resources>

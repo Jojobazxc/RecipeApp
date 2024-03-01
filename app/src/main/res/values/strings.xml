@@ -9,4 +9,6 @@
     <string name="content_description_for_recipes_image">Изображение карточки рецепта</string>
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_ingredients">Ингредиенты</string>
+    <string name="recipe_cooking_method">Способ приготовления</string>
 </resources>
