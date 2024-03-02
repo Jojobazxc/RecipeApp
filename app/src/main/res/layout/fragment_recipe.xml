@@ -54,13 +54,15 @@
                     />
             </LinearLayout>
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvIngredients"
                 android:background="@drawable/shape_rounded_recycler"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingHorizontal="@dimen/main_dimen"
-                android:paddingVertical="@dimen/main_dimen"
+                android:paddingVertical="@dimen/half_main_dimen"
                 android:layout_marginBottom="@dimen/main_dimen"
-                tools:listitem="@layout/item_ingredients"/>
+                tools:listitem="@layout/item_ingredients"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
             <TextView
                 style="@style/StyleRecipeTitle"
                 android:layout_width="wrap_content"
@@ -69,12 +71,14 @@
                 android:text="@string/recipe_cooking_method"
                 />
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvMethod"
                 android:background="@drawable/shape_rounded_recycler"
                 android:paddingHorizontal="@dimen/main_dimen"
-                android:paddingVertical="@dimen/main_dimen"
+                android:paddingVertical="@dimen/half_main_dimen"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                tools:listitem="@layout/item_method"/>
+                tools:listitem="@layout/item_method"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
             </LinearLayout>
         </LinearLayout>
 

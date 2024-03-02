@@ -3,21 +3,29 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="@dimen/half_main_dimen"
     android:orientation="horizontal">
     <TextView
         style="@style/StyleIngredient"
+        android:id="@+id/tvNameOfIngredient"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         tools:text="Творог"/>
     <TextView
         style="@style/StyleIngredient"
+        android:id="@+id/tvQuantityOfIngredient"
         android:layout_width="wrap_content"
         android:gravity="end"
         android:layout_height="wrap_content"
         tools:text="350"/>
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "/>
+    <TextView
         style="@style/StyleIngredient"
+        android:id="@+id/tvUnitOfMeasure"
         android:gravity="end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
