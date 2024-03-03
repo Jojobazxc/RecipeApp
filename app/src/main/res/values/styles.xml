@@ -6,6 +6,9 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/main_text_size</item>
     </style>
+    <style name="StyleTitlePortions" parent="StyleDescriptionOfCard">
+        <item name="android:textSize">@dimen/portions_text_size</item>
+    </style>
     <style name="StyleIngredient" parent="StyleTitle14">
         <item name="android:fontFamily">@font/montserrat_regular</item>
         <item name="android:textColor">@color/card_description_color</item>
