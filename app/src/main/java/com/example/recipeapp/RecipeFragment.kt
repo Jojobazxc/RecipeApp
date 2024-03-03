@@ -7,7 +7,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 import com.example.recipeapp.databinding.FragmentRecipeBinding
 import java.io.IOException
 import java.io.InputStream
@@ -33,14 +36,14 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
 
     }
 
-    private fun initArguments(): Recipe? {
+    private fun initArguments() {
         recipe = if (Build.VERSION.SDK_INT >= 33) {
             arguments?.getParcelable(ARG_RECIPE, Recipe::class.java)
         } else {
             arguments?.getParcelable(ARG_RECIPE)
         }
-        return recipe
     }
+
     private fun initUi() {
         binding.tvHeaderTitle.text = recipe?.title
         try {
@@ -67,10 +70,15 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
         recyclerViewOfIngredients.adapter = recyclerViewOfIngredientsAdapter
         recyclerViewOfMethod.adapter = recyclerViewOfMethodAdapter
 
-        val dividerHeight = resources.getDimensionPixelSize(R.dimen.divider_height)
+        val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
+        ResourcesCompat.getDrawable(resources, R.drawable.shape_divider_recycler_view, null)?.let {
+            dividerItemDecoration.setDrawable(it)
+        }
+
+        /*val dividerHeight = resources.getDimensionPixelSize(R.dimen.divider_height)
         val itemDecoration = context?.let { CustomItemDecoration(it, dividerHeight) }
         itemDecoration?.let { binding.rvIngredients.addItemDecoration(it) }
-        itemDecoration?.let { binding.rvMethod.addItemDecoration(it) }
+        itemDecoration?.let { binding.rvMethod.addItemDecoration(it) }*/
 
     }
 }

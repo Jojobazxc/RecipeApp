@@ -19,19 +19,19 @@
             android:layout_height="match_parent"
             android:contentDescription="@string/content_description_of_burger_recipes_header_image"
             android:scaleType="centerCrop"
-            tools:src="@drawable/bcg_categories"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/bcg_categories" />
 
         <TextView
             android:id="@+id/tvHeaderTitle"
             style="@style/StyleHeaderTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="@string/title_burgers"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="@string/title_burgers" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -40,9 +40,8 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="8dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_recipes"
         tools:itemCount="8"
-        >
+        tools:listitem="@layout/item_recipes">
 
     </androidx.recyclerview.widget.RecyclerView>
 
