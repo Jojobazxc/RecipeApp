@@ -12,6 +12,5 @@
     <string name="title_ingredients">Ингредиенты</string>
     <string name="recipe_cooking_method">Способ приготовления</string>
     <string name="content_description_recipe_screen">Изображение для экрана карточки рецепта</string>
-    <string name="dot">.</string>
     <string name="ingredients_portions">Порции:</string>
 </resources>
