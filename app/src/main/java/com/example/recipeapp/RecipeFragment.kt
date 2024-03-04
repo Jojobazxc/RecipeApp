@@ -74,9 +74,11 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
         val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
         ResourcesCompat.getDrawable(resources, R.drawable.shape_divider_recycler_view, null)?.let {
             dividerItemDecoration.setDrawable(it)
+            binding.rvIngredients.addItemDecoration(dividerItemDecoration)
+            binding.rvMethod.addItemDecoration(dividerItemDecoration)
         }
 
-        binding.sbPortions.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
+        binding.sbPortions.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 recyclerViewOfIngredientsAdapter?.updateIngredients(progress)
                 binding.tvNumberOfPortions.text = progress.toString()
@@ -90,12 +92,6 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
 
             }
         })
-
-        /*val dividerHeight = resources.getDimensionPixelSize(R.dimen.divider_height)
-        val itemDecoration = context?.let { CustomItemDecoration(it, dividerHeight) }
-        itemDecoration?.let { binding.rvIngredients.addItemDecoration(it) }
-        itemDecoration?.let { binding.rvMethod.addItemDecoration(it) }*/
-
     }
 }
 
