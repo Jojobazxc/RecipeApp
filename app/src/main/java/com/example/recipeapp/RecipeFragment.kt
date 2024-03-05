@@ -74,11 +74,10 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
         val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
         ResourcesCompat.getDrawable(resources, R.drawable.shape_divider_recycler_view, null)?.let {
             dividerItemDecoration.setDrawable(it)
-            with(binding){
+            with(binding) {
                 rvIngredients.addItemDecoration(dividerItemDecoration)
                 rvMethod.addItemDecoration(dividerItemDecoration)
             }
-
         }
 
         binding.sbPortions.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
