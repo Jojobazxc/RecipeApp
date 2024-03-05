@@ -50,4 +50,8 @@
         <item name="android:textSize">@dimen/header_title_text_size</item>
         <item name="android:textColor">@color/header_textview_color</item>
     </style>
+    <style name="StyleSeekBar">
+        <item name="android:thumb">@drawable/shape_seekbar_thumb</item>
+        <item name="android:progressDrawable">@drawable/shape_seekbar_progress</item>
+    </style>
 </resources>

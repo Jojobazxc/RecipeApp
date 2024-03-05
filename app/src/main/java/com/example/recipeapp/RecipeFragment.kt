@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
@@ -78,10 +79,10 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
             binding.rvMethod.addItemDecoration(dividerItemDecoration)
         }
 
+        binding.sbPortions.setPadding(8,0,8,0)
         binding.sbPortions.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 recyclerViewOfIngredientsAdapter?.updateIngredients(progress)
-                binding.tvNumberOfPortions.text = progress.toString()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
