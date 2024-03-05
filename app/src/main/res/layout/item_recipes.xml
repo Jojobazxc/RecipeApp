@@ -2,8 +2,8 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/StyleCardOfCategories"
     android:id="@+id/recipeItemCard"
+    style="@style/StyleCardOfCategories"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="@dimen/half_main_dimen"
@@ -14,14 +14,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <ImageView
             android:id="@+id/ivCardRecipesImage"
             android:layout_width="match_parent"
             android:layout_height="@dimen/card_view_recipes_image_height"
-            android:scaleType="centerCrop"
             android:contentDescription="@null"
-            tools:src="@drawable/bcg_categories"
-            />
+            android:scaleType="centerCrop"
+            tools:src="@drawable/bcg_categories" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,6 +29,7 @@
             android:layout_gravity="bottom"
             android:orientation="vertical"
             android:padding="@dimen/half_main_dimen">
+
             <TextView
                 android:id="@+id/tvCardRecipesTitle"
                 style="@style/StyleTitleOfCard"

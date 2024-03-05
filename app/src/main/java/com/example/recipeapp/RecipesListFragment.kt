@@ -1,7 +1,6 @@
 package com.example.recipeapp
 
 
-import RecipesListAdapter
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
@@ -42,7 +41,7 @@ class RecipesListFragment : Fragment(R.layout.fragment_list_recipes) {
     }
 
     fun openRecipeByRecipeId(recipeId: Int) {
-        val recipe = STUB.getRecipeBuId(recipeId)
+        val recipe = STUB.getRecipeById(recipeId)
         val bundle = bundleOf(
             ARG_RECIPE to recipe
         )

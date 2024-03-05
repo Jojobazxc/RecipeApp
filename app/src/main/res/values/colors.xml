@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name ="divider_color">#F5F5F5</color>
     <color name="main_background_color">#F4FAFF</color>
     <color name="categories_button_color">#525DC0</color>
     <color name="favorite_button_color">#E13E3E</color>

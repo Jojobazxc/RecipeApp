@@ -10,5 +10,6 @@
     <dimen name="main_dimen">16dp</dimen>
     <dimen name="half_main_dimen">8dp</dimen>
     <dimen name="card_view_recipes_image_height">100dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
 
 </resources>

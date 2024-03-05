@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/half_main_dimen"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvNumberOfStep"
+        style="@style/StyleIngredient"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        tools:text="1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dot" />
+
+    <TextView
+        android:id="@+id/tvTextOfStep"
+        style="@style/StyleMethod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        tools:text="Текст рецепта" />
+
+</LinearLayout>
