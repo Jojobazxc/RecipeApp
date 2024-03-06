@@ -56,6 +56,34 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title_ingredients" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/StyleTitlePortions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ingredients_portions" />
+
+                    <TextView
+                        android:id="@+id/tvNumberOfPortions"
+                        style="@style/StyleTitlePortions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="3" />
+                </LinearLayout>
+
+               <SeekBar
+                    android:id="@+id/sbPortions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="5"
+                    android:min="1" />
+
+
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
