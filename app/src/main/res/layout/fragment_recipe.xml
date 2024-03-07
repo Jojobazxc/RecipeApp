@@ -27,6 +27,18 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@drawable/bcg_categories" />
 
+            <ImageButton
+                android:id="@+id/ibIcHeart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/main_dimen"
+                android:layout_marginEnd="@dimen/main_dimen"
+                android:contentDescription="@string/content_description_favorites_icon"
+                android:foreground="?attr/selectableItemBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:background="@drawable/ic_heart_empty" />
+
             <TextView
                 android:id="@+id/tvHeaderTitle"
                 style="@style/StyleHeaderTitle"

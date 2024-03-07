@@ -48,6 +48,10 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
 
     private fun initUi() {
         binding.tvHeaderTitle.text = recipe?.title
+        binding.ibIcHeart.setBackgroundResource(R.drawable.ic_heart_empty)
+        binding.ibIcHeart.setOnClickListener{
+            binding.ibIcHeart.setBackgroundResource(R.drawable.ic_heart)
+        }
         try {
             val categoryImageUrl = recipe?.imageUrl
             val inputStream: InputStream? =
