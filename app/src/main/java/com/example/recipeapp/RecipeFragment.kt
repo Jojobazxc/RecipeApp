@@ -1,5 +1,6 @@
 package com.example.recipeapp
 
+import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
@@ -9,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +22,16 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
         FragmentRecipeBinding.inflate(layoutInflater)
     }
     private var recipe: Recipe? = null
+
+    private var favoritesList = mutableSetOf<String>()
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        SharedPreferencesManager.init(context)
+        favoritesList = SharedPreferencesManager.getFavorites()
+    }
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -48,10 +58,11 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
 
     private fun initUi() {
         binding.tvHeaderTitle.text = recipe?.title
-        binding.ibIcHeart.setBackgroundResource(R.drawable.ic_heart_empty)
-        binding.ibIcHeart.setOnClickListener{
-            binding.ibIcHeart.setBackgroundResource(R.drawable.ic_heart)
+        setImageFavoriteRecipe()
+        binding.ibIcHeart.setOnClickListener {
+            saveAndCheckFavoriteRecipe()
         }
+
         try {
             val categoryImageUrl = recipe?.imageUrl
             val inputStream: InputStream? =
@@ -83,7 +94,7 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
             binding.rvMethod.addItemDecoration(dividerItemDecoration)
         }
 
-        binding.sbPortions.setPadding(8,0,8,0)
+        binding.sbPortions.setPadding(8, 0, 8, 0)
         binding.sbPortions.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 recyclerViewOfIngredientsAdapter?.updateIngredients(progress)
@@ -98,5 +109,19 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
             }
         })
     }
+
+    private fun setImageFavoriteRecipe() {
+        binding.ibIcHeart.setBackgroundResource(if (recipe?.let { favoritesList.contains((it.id).toString()) } == true)
+            R.drawable.ic_heart else R.drawable.ic_heart_empty)
+    }
+
+    private fun saveAndCheckFavoriteRecipe() {
+        if (favoritesList.contains((recipe?.id).toString())) {
+            favoritesList.remove((recipe?.id).toString())
+        } else favoritesList.add((recipe?.id).toString())
+        setImageFavoriteRecipe()
+        SharedPreferencesManager.saveFavorites(favoritesList)
+    }
+
 }
 
