@@ -55,6 +55,7 @@
                     style="@style/StyleRecipeTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/half_main_dimen"
                     android:text="@string/title_ingredients" />
 
                 <LinearLayout
@@ -66,6 +67,7 @@
                         style="@style/StyleTitlePortions"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/half_main_dimen"
                         android:text="@string/ingredients_portions" />
 
                     <TextView
@@ -73,11 +75,13 @@
                         style="@style/StyleTitlePortions"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/quarter_main_dimen"
                         tools:text="3" />
                 </LinearLayout>
 
-               <SeekBar
+                <SeekBar
                     android:id="@+id/sbPortions"
+                    style="@style/StyleSeekBar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:max="5"

@@ -8,4 +8,6 @@
     <color name="favorite_button_color">#E13E3E</color>
     <color name="header_textview_color">#5F3678</color>
     <color name="card_description_color">#666666</color>
+    <color name="seekbar_progress_color">#A1A9F9</color>
+    <color name="seekbar_thumb_color">#525DC0</color>
 </resources>
