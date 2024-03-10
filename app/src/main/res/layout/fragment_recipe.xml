@@ -87,6 +87,7 @@
                         style="@style/StyleTitlePortions"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/quarter_main_dimen"
                         tools:text="3" />
                 </LinearLayout>
 

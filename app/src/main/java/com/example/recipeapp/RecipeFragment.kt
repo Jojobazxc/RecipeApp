@@ -62,7 +62,6 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
         binding.ibIcHeart.setOnClickListener {
             saveAndCheckFavoriteRecipe()
         }
-
         try {
             val categoryImageUrl = recipe?.imageUrl
             val inputStream: InputStream? =
@@ -90,14 +89,18 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
         val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
         ResourcesCompat.getDrawable(resources, R.drawable.shape_divider_recycler_view, null)?.let {
             dividerItemDecoration.setDrawable(it)
-            binding.rvIngredients.addItemDecoration(dividerItemDecoration)
-            binding.rvMethod.addItemDecoration(dividerItemDecoration)
+            with(binding) {
+                rvIngredients.addItemDecoration(dividerItemDecoration)
+                rvMethod.addItemDecoration(dividerItemDecoration)
+            }
         }
-
-        binding.sbPortions.setPadding(8, 0, 8, 0)
+        val sizeLnDp = resources.getDimensionPixelSize(R.dimen.quarter_main_dimen)
+        binding.sbPortions.setPadding(sizeLnDp, 0, sizeLnDp, 0)
+        binding.tvNumberOfPortions.text = 1.toString()
         binding.sbPortions.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 recyclerViewOfIngredientsAdapter?.updateIngredients(progress)
+                binding.tvNumberOfPortions.text = progress.toString()
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
