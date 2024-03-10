@@ -13,4 +13,5 @@
     <string name="recipe_cooking_method">Способ приготовления</string>
     <string name="content_description_recipe_screen">Изображение для экрана карточки рецепта</string>
     <string name="ingredients_portions">Порции:</string>
+    <string name="content_description_favorites_icon">Иконка для добавления рецепта в избранное</string>
 </resources>
