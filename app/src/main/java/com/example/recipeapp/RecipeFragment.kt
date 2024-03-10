@@ -79,10 +79,11 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
         val dividerItemDecoration = DividerItemDecoration(context, RecyclerView.VERTICAL)
         ResourcesCompat.getDrawable(resources, R.drawable.shape_divider_recycler_view, null)?.let {
             dividerItemDecoration.setDrawable(it)
-            binding.rvIngredients.addItemDecoration(dividerItemDecoration)
-            binding.rvMethod.addItemDecoration(dividerItemDecoration)
+            with(binding) {
+                rvIngredients.addItemDecoration(dividerItemDecoration)
+                rvMethod.addItemDecoration(dividerItemDecoration)
+            }
         }
-
         val sizeLnDp = resources.getDimensionPixelSize(R.dimen.quarter_main_dimen)
         binding.sbPortions.setPadding(sizeLnDp, 0, sizeLnDp, 0)
         binding.tvNumberOfPortions.text = 1.toString()
