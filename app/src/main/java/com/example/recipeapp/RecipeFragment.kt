@@ -23,12 +23,10 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
     }
     private var recipe: Recipe? = null
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        SharedPreferencesManager.init(context)
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        context?.let { SharedPreferencesManager.init(it) }
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
