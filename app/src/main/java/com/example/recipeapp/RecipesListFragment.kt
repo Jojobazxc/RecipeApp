@@ -52,7 +52,7 @@ class RecipesListFragment : Fragment(R.layout.fragment_list_recipes) {
         }
     }
 
-    private fun initUI(){
+    private fun initUI() {
         binding.tvHeaderTitle.text = categoryName
         try {
             val inputStream: InputStream? =
@@ -64,7 +64,7 @@ class RecipesListFragment : Fragment(R.layout.fragment_list_recipes) {
         }
     }
 
-    private fun initArguments(){
+    private fun initArguments() {
         arguments.let { args ->
             categoryId = args?.getInt(ARG_CATEGORY_ID)
             categoryName = args?.getString(ARG_CATEGORY_NAME)

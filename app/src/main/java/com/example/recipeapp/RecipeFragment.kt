@@ -23,14 +23,10 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
     }
     private var recipe: Recipe? = null
 
-    private var favoritesList = mutableSetOf<String>()
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        SharedPreferencesManager.init(context)
-        favoritesList = SharedPreferencesManager.getFavorites()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        context?.let { SharedPreferencesManager.init(it) }
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -58,10 +54,10 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
 
     private fun initUi() {
         binding.tvHeaderTitle.text = recipe?.title
-        setImageFavoriteRecipe()
         binding.ibIcHeart.setOnClickListener {
             saveAndCheckFavoriteRecipe()
         }
+        setImageFavoriteRecipe()
         try {
             val categoryImageUrl = recipe?.imageUrl
             val inputStream: InputStream? =
@@ -114,16 +110,18 @@ class RecipeFragment : Fragment(R.layout.fragment_recipe) {
     }
 
     private fun setImageFavoriteRecipe() {
+        val favoritesList = SharedPreferencesManager.getFavorites()
         binding.ibIcHeart.setBackgroundResource(if (recipe?.let { favoritesList.contains((it.id).toString()) } == true)
             R.drawable.ic_heart else R.drawable.ic_heart_empty)
     }
 
     private fun saveAndCheckFavoriteRecipe() {
+        val favoritesList = SharedPreferencesManager.getFavorites()
         if (favoritesList.contains((recipe?.id).toString())) {
             favoritesList.remove((recipe?.id).toString())
         } else favoritesList.add((recipe?.id).toString())
-        setImageFavoriteRecipe()
         SharedPreferencesManager.saveFavorites(favoritesList)
+        setImageFavoriteRecipe()
     }
 
 }
